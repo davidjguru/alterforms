@@ -1,0 +1,9 @@
+<?php
+
+/**
+ *Implements hook_form_alter().
+ */
+
+function alterforms_form_alter(&$form, $form_state, $form_id) {
+  drupal_set_message("Form ID is : " . $form_id);
+}

@@ -1,0 +1,5 @@
+name: Alter Forms
+type: module
+description: 'Custom module to alter forms'
+package: Development
+core: 8.x
