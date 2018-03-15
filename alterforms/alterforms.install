@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the metatag module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+
+function alterforms_install() {
+  
+   // Dont display the message during site installation, it looks funny.
+  
+   if (!drupal_installation_attempted()) {
+    drupal_set_message(t("To adjust global defaults, go to your_site/modules/alterforms/"));
+  }
+}
+
