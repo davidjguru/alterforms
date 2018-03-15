@@ -5,5 +5,56 @@
  */
 
 function alterforms_form_alter(&$form, $form_state, $form_id) {
+
+  // Beware of this: comment the following line if you do not want to activate the viewing of the form-ID
   drupal_set_message("Form ID is : " . $form_id);
+
+  // Now we have to test the form editing with form alter.
+  // Select an ID from a form within your Drupal Site and
+  // change the string in the if as $form_id
+
+if ($form_id == 'contact_message_form_para_pruebas_form'){
+
+  // We have to set a new checkbox for testing.
+  // Add a check box. Clear cache and reload the form.
+    $form['name'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('I certify that this is my true name'),
+    );
+
+ // Now we're gonna to test the dinamic response through
+ // the Form API #states, allowing us to create form 
+ // elements that change state (show, hide, enable,disable, etc)
+ // from conditions. 
+
+  // Hide nick field when the anonymous checkbox is checked.
+   $form['nick'] = array(
+     '#type' => 'textfield',
+     '#title' => t('Put here your nickname, dude'),
+     '#states' => array(
+     'invisible' => array(
+     ':input[name="anonymous"]' => array('checked' => TRUE),
+     ),
+    ),
+   );
+
+ // Uncheck anonymous field when the name field is filled.
+  $form['anonymous'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Well, I prefer to remain as anonymous'),
+    '#states' => array(
+    'unchecked' => array(
+    ':input[name="name"]' => array('filled' => TRUE),
+    ),
+   ),
+  );
+
+                                                             1,1      Comienzo
+
+
+}
+
+
+
+
 }
