@@ -27,9 +27,9 @@ This module have a alterforms.module file with a central function, a classic hoo
 To visualize all the information of a form, you have two information dump functions on screen, you only have to use one (comment the line you do not want to use), at the foot of the hook form alter: var_dump() and kint().
 
 By opening the file alterforms.module with your favorite text editor, you can see the code and select the debugging function.
-![Funcions Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_install.png)
+![Funcions Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_select_debugging_functions.png)
 
 Going to your Drupal project through your browser, access the URL of the chosen form and you will see in the header all the rendered information.
-![Info Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_install.png)
+![Info Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_info_forms.png)
 
 
