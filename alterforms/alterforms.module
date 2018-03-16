@@ -55,13 +55,35 @@ if ($form_id == 'contact_message_form_para_pruebas_form'){
    ),
   );
 
- // This message build from var_dump shows on screen all the data
- // Related to the form, passed by $form. 
- // The position in this script is just after all the elements, at the end.
- // You can view all the values on the top of your form. 
- // And you'll can take any form element from this function or
- // previus, for editing and deleting. 
- drupal_set_message(var_dump($form));
+// Debugging zone
+
+// Here you can select what kind of funciont want to use
+// to debug your forms: you can use the general var_dump()
+// within a drupal_set_message or the kint() method -with 
+// a more organized structure and nested options- provided
+// by the Kint Module from Devel Module Set.
+// Kint has beed added as a dependency. 
+
+// Uncomment the next line and comment the next function
+// to not saturate the layout with information and 
+// not overload the view
+
+   kint($form);
+
+
+ 
+// This message build from var_dump shows on screen all the data
+// Related to the form, passed by $form. 
+// The position in this script is just after all the elements, at the end.
+// You can view all the values on the top of your form. 
+// And you'll can take any form element from this function or
+// previus, for editing and deleting. 
+
+// Uncomment the next line and comment the previous function
+// to not saturate the layout with information and 
+// not overload the view
+
+//   drupal_set_message(var_dump($form));
 
 
 }

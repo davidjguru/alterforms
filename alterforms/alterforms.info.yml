@@ -1,5 +1,9 @@
 name: Alter Forms
-type: module
-description: 'Custom module to alter forms'
+description: Custom module to alter forms
 package: Development
+
+type: module
 core: 8.x
+
+dependencies:
+  - devel:kint
