@@ -24,8 +24,9 @@ After that, only active the modules under /admin/extend/modules, section "Develo
 * [Search Kint](https://www.drupal.org/project/search_kint) - The search-box for Kint
 
 If you prefer not to install these facilities, open the file alterforms.info.yml and delete the declaration of these dependencies, but we recommend working with Kint to obtain more structured information.
+
 **Annotation:** By default, access permissions to Kint information are for the admin role in Drupal. If you need to access with another type of user, you must modify the permissions of the module in the path / admin / people / permissions
-![Kint Permissions](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_install.png)
+![Kint Permissions](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_kint_permissions.png)
 
 ## Install
 Only get this url and use wget from your prompt. Move the folder within /your_drupal8/modules/ or /your_drupal8/modules/custom. 
