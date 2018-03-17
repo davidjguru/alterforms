@@ -13,7 +13,7 @@ function alterforms_form_alter(&$form, $form_state, $form_id) {
   // Select an ID from a form within your Drupal Site and
   // change the string in the if as $form_id
 
-if ($form_id == 'contact_message_form_para_pruebas_form'){
+if ($form_id == 'your_string_form_id'){
 
 
   // If you will go to the referenced form, will see

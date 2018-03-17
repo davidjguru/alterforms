@@ -14,10 +14,21 @@ This module is only for development environments (disable / uninstall before mov
 Do you want to make changes in a form in Drupal 8 and you need to extract its form ID? This module, once installed and activated, configures a Drupal-styled message with the id of each form that appears on your website. Only when you open it will you be able to see its ID in the header.
 In a complementary way you can also use its debugging functions to extract all the information available from each form: actions, content, states and fields.
 
+## Dependencies
+Alterforms has dependencies: Kint (sub-module of Devel) and this depends on the installation of the Devel suite. It is also necessary to install Devel completely using the normal methods (composer, drush, wget or interface).
+Another dependence is Search Kint module, to enable a search-box to locate specific information of the forms within Kint.
+After that, only active the modules under /admin/extend/modules, section "Development" (for Devel Kint) and Search Kint.
+
+
+* [Devel Suite](https://www.drupal.org/project/devel) - The Devel Module Suite for Drupal
+* [Search Kint](https://www.drupal.org/project/search_kint) - The search-box for Kint
+
+If you prefer not to install these facilities, open the file alterforms.info.yml and delete the declaration of these dependencies, but we recommend working with Kint to obtain more structured information.
+**Annotation:** By default, access permissions to Kint information are for the admin role in Drupal. If you need to access with another type of user, you must modify the permissions of the module in the path / admin / people / permissions
+![Kint Permissions](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_install.png)
+
 ## Install
 Only get this url and use wget from your prompt. Move the folder within /your_drupal8/modules/ or /your_drupal8/modules/custom. 
-Alterforms has dependencies: Kint (sub-module of Devel) and this depends on the installation of the Devel suite. It is also necessary to install Devel completely using the normal methods (composer, drush, wget or interface).
-After that, only active the module under /admin/extend/modules, section "Development".
 
 ![Alterforms Drupal 8](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_install.png)
 
@@ -28,6 +39,8 @@ To visualize all the information of a form, you have two information dump functi
 
 By opening the file alterforms.module with your favorite text editor, you can see the code and select the debugging function.
 ![Funcions Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_select_debugging_functions.png)
+
+
 
 Going to your Drupal project through your browser, access the URL of the chosen form and you will see in the header all the rendered information.
 ![Info Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_info_forms.png)
