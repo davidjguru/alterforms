@@ -13,13 +13,29 @@ function alterforms_form_alter(&$form, $form_state, $form_id) {
   // Select an ID from a form within your Drupal Site and
   // change the string in the if as $form_id
 
-if ($form_id == 'your_string_form_id'){
+  switch ($form_id){
+
+    case  "your_string_form_id":
+
+  // Some examples
+  // First: Get the currentUser id 
+      $user = \Drupal::currentUser()->id();
+  
+  // Launch a query
+      $result = db_select('table_in_database', 't')
+          ->condition('t.column', $user, '=')
+          ->fields('t',array('name_column_to_extract'))
+          ->execute()
+          ->fetchField(0);
+
+  // Change the validation in pre-submit
+      $form['#validate'][] = 'your_string_form_validate';
 
 
-  // If you will go to the referenced form, will see
+  // If you back to the rendered form, will see
   // the new elements described here within your form. 
 
-  // First Example: new checkbox
+  // Example: new checkbox
   // We have to set a new checkbox for testing.
   // Add a check box. Clear cache and reload the form.
     $form['name'] = array(
@@ -59,7 +75,8 @@ if ($form_id == 'your_string_form_id'){
 
 // Here you can select what kind of funciont want to use
 // to debug your forms: you can use the general var_dump()
-// within a drupal_set_message or the kint() method -with 
+// within a drupal_set_messag, the dpm function from Devel
+// module suite or the kint() method -with 
 // a more organized structure and nested options- provided
 // by the Kint Module from Devel Module Set.
 // Kint has beed added as a dependency. 
@@ -72,23 +89,35 @@ if ($form_id == 'your_string_form_id'){
 
 
  
-// This message build from var_dump shows on screen all the data
-// Related to the form, passed by $form. 
-// The position in this script is just after all the elements, at the end.
-// You can view all the values on the top of your form. 
-// And you'll can take any form element from this function or
-// previus, for editing and deleting. 
+  // This message build from var_dump shows on screen all the data
+  // Related to the form, passed by $form. 
+  // The position in this script is just after all the elements, at the end.
+  // You can view all the values on the top of your form. 
+  // And you'll can take any form element from this function or
+  // previus, for editing and deleting. 
 
-// Uncomment the next line and comment the previous function
-// to not saturate the layout with information and 
-// not overload the view
+  // Uncomment the next line and comment the previous function
+  // to not saturate the layout with information and 
+  // not overload the view
 
-//   drupal_set_message(var_dump($form));
+  //   drupal_set_message(var_dump($form));
 
+  break;
+
+  case "another_form_id":
+  
+  drupal_set_message("We can work on another form");
+  break;
+   
 
 }
 
 
 
 
+}
+
+function your_string_form_validate($form, $form_state){
+
+      dpm($form_state, 'Testing the format with dpm -Devel-');
 }
