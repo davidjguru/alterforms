@@ -43,7 +43,7 @@ function alterforms_form_alter(&$form, $form_state, $form_id) {
       '#title' => t('I certify that this is my true name'),
     );
 
- // Second Example: More dinamics elements with #states properties
+ // Example: More dinamics elements with #states properties
  // Now we're gonna to test the dinamic response through
  // the Form API #states, allowing us to create form 
  // elements that change state (show, hide, enable,disable, etc)
@@ -75,7 +75,7 @@ function alterforms_form_alter(&$form, $form_state, $form_id) {
 
 // Here you can select what kind of funciont want to use
 // to debug your forms: you can use the general var_dump()
-// within a drupal_set_messag, the dpm function from Devel
+// within a drupal_set_message, the dpm function from Devel
 // module suite or the kint() method -with 
 // a more organized structure and nested options- provided
 // by the Kint Module from Devel Module Set.
