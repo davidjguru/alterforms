@@ -3,7 +3,7 @@ Custom Module for Drupal 8
 
 ## Description
 Custom Module for Drupal 8: getting all the info about your forms within Drupal 8 project like the form ID, fields and others.
-It offers a simple workspace to add changes and modifications to your forms through a simple if-else structure, as a simple and centralized way of operating on forms.
+It offers a simple workspace to add changes and modifications to your forms through a simple switch structure, an  easy and centralized way of operating on forms.
 
 
 ## Purpose
@@ -45,5 +45,4 @@ By opening the file alterforms.module with your favorite text editor, you can se
 
 Going to your Drupal project through your browser, access the URL of the chosen form and you will see in the header all the rendered information.
 ![Info Alterforms](https://github.com/davidjguru/alterforms/blob/master/images/alterforms_drupal_8_module_info_forms.png)
-
 
